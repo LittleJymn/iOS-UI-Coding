@@ -30,7 +30,13 @@
     __unused CGRect convertRedRect = [_greenView convertRect:redRect toView:self.view];
     
     __unused CGRect redBounds = _redView.bounds;
-    __unused CGRect convertRecBounds = [_greenView convertRect:redBounds toView:self.view];
+    __unused CGRect convertRedBounds = [_greenView convertRect:redBounds toView:self.view];
+    
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    __unused CGRect greenRect = _greenView.frame;
+    __unused CGRect convertToWindowGreenRect = [_greenView convertRect:_greenView.frame toView:window];
+    __unused CGRect greenBounds = _greenView.bounds;
+    __unused CGRect convertToWindowGreenBounds = [_greenView convertRect:_greenView.bounds toView:window];
     
     NSLog(@"%s", __func__);
     
