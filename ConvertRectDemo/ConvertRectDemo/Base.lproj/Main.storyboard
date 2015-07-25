@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sd-rw-tZs">
+                                <rect key="frame" x="100" y="100" width="250" height="250"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T59-9Z-q3o">
+                                        <rect key="frame" x="75" y="75" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.30588235289999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="Qre-2B-LxO"/>
+                                            <constraint firstAttribute="height" constant="100" id="dtR-OH-WrM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.050012796818603114" green="0.66666666666666663" blue="0.20444269312379917" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerY" secondItem="T59-9Z-q3o" secondAttribute="centerY" id="fDg-Hu-x0z"/>
+                                    <constraint firstAttribute="height" constant="250" id="m8S-o2-MoG"/>
+                                    <constraint firstAttribute="width" constant="250" id="xAt-TH-IbD"/>
+                                    <constraint firstAttribute="centerX" secondItem="T59-9Z-q3o" secondAttribute="centerX" id="zsV-wU-WQc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0sd-rw-tZs" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="100" id="8vG-Dy-PIc"/>
+                            <constraint firstItem="0sd-rw-tZs" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="100" id="XfI-HX-aTB"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="greenView" destination="0sd-rw-tZs" id="Sqk-vm-I56"/>
+                        <outlet property="redView" destination="T59-9Z-q3o" id="84F-7s-gz3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
