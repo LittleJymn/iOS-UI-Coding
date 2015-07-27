@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @protocol JTTImageZoomViewDelegate <NSObject>
-- (void)jtt_imageZoomViewDidTap;
+- (void)jtt_imageZoomViewDidTapAtIndex:(NSInteger)index;
 @end
 
 @interface JTTImageZoomView : UIScrollView
 
-@property (nonatomic, weak) id<JTTImageZoomViewDelegate> jttDelegate;
-
-- (void)setImage:(UIImage *)image;
+- (instancetype)initWithFrame:(CGRect)frame
+                        image:(UIImage *)image
+                        index:(NSInteger)index
+                     delegate:(id<JTTImageZoomViewDelegate>)aDelegate;
 
 @end

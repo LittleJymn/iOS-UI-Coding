@@ -17,6 +17,8 @@
     BOOL m_isDoubleTap;
 }
 
+@property (nonatomic, weak) id<JTTImageZoomViewDelegate> jttDelegate;
+@property (nonatomic, assign) NSInteger index;
 @property (nonatomic, strong) UIImageView *imageView;
 
 @end
@@ -29,7 +31,11 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+                        image:(UIImage *)image
+                        index:(NSInteger)index
+                     delegate:(id<JTTImageZoomViewDelegate>)aDelegate
+{
     self = [super initWithFrame:frame];
     if (self) {
         self.showsHorizontalScrollIndicator = NO;
@@ -43,7 +49,12 @@
         _imageView = [UIImageView new];
         _imageView.clipsToBounds = YES;
         _imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _imageView.image = image;
+        [self adjustImageViewFrame];
         [self addSubview:_imageView];
+        
+        _index = index;
+        _jttDelegate = aDelegate;
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
         singleTap.delaysTouchesBegan = YES;
@@ -57,15 +68,13 @@
     return self;
 }
 
+#pragma mar - Dealloc
 
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-#pragma mark - iVars Accessors
-
-- (void)setImage:(UIImage *)image {
-    _imageView.image = image;
-    [self adjustImageViewFrame];
+- (void)dealloc {
+    m_isDoubleTap = NO;
+    _jttDelegate = nil;
+    _index = 0;
+    _imageView = nil;
 }
 
 
@@ -111,9 +120,10 @@
     if (m_isDoubleTap) {
         return;
     }
-    
-    if (_jttDelegate && [_jttDelegate respondsToSelector:@selector(jtt_imageZoomViewDidTap)]) {
-        [_jttDelegate jtt_imageZoomViewDidTap];
+    else {
+        if (_jttDelegate && [_jttDelegate respondsToSelector:@selector(jtt_imageZoomViewDidTapAtIndex:)]) {
+            [_jttDelegate jtt_imageZoomViewDidTapAtIndex:_index];
+        }
     }
 }
 

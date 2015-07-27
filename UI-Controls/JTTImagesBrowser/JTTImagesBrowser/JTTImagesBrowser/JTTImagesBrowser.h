@@ -10,12 +10,8 @@
 
 @interface JTTImagesBrowser : UIView
 
-- (instancetype)initWithImages:(NSArray *)imagesArray;
+- (instancetype)initWithImageViews:(NSArray *)imageViewsArray;
 
-- (void)showWithImageView:(UIImageView *)imageView
-                    index:(NSInteger)index;
+- (void)showWithIndex:(NSInteger)index;
 
 @end
-
-// 隐藏到特定下标对应的视图
-// 隐藏导航条和状态栏

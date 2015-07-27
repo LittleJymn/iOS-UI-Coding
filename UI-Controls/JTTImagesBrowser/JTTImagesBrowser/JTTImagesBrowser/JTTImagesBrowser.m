@@ -20,12 +20,13 @@
 
 @interface JTTImagesBrowser () <UIScrollViewDelegate, JTTImageZoomViewDelegate>
 {
-    CGRect m_srcImageViewRect;
+    BOOL m_viewDidConfig;
     NSInteger m_currentIndex;
     CGPoint m_beginPoint;
     BOOL m_scrollToRight;
 }
 
+@property (nonatomic, copy) NSArray *srcImageViews;
 @property (nonatomic, copy) NSArray *allImages;
 
 @property (nonatomic, strong) UIScrollView *mainScrollView;
@@ -40,19 +41,28 @@
 
 #pragma mark - Init
 
-- (instancetype)initWithImages:(NSArray *)imagesArray {
-    if (imagesArray == nil || imagesArray.count == 0) {
+- (instancetype)initWithImageViews:(NSArray *)imageViewsArray {
+    if (imageViewsArray == nil || imageViewsArray.count == 0) {
         return nil;
     }
     
     self = [super init];
     if (self) {
-        self.hidden = YES;
+        m_viewDidConfig = NO;
         m_currentIndex = 0;
-        _allImages = [imagesArray copy];
+        _srcImageViews = imageViewsArray;
+        NSMutableArray *images = [NSMutableArray array];
+        for (UIImageView *imgView in imageViewsArray) {
+            if (imgView.image == nil) {
+                return nil;
+            }
+            [images addObject:imgView.image];
+        }
+        _allImages = [images copy];
         
         self.backgroundColor = [UIColor blackColor];
         self.frame = [UIScreen mainScreen].bounds;
+        self.hidden = YES;
         
         [self configMainScrollView];
     }
@@ -76,10 +86,11 @@
 #pragma mark - Dealloc
 
 - (void)dealloc {
-    m_srcImageViewRect = CGRectZero;
+    m_viewDidConfig = NO;
     m_currentIndex = 0;
     m_beginPoint = CGPointZero;
     m_scrollToRight = NO;
+    _srcImageViews = nil;
     _allImages = nil;
     _mainScrollView = nil;
 }
@@ -90,56 +101,84 @@
 
 #pragma mark - Public Methods
 
-- (void)showWithImageView:(UIImageView *)imageView index:(NSInteger)index {
-    if ([self validatePageIndex:index] == NO) {
+- (void)showWithIndex:(NSInteger)index {
+    if ([self configSourceImageZoomViewsWithCurrentIndex:index] == NO) {
         return;
+    }
+    
+    if (m_viewDidConfig == NO) {
+        // 必须在 [window makeKeyAndVisible] 后获取 keyWindow，否则会获取到 nil
+        // 在用户点击图片触发该方法时，可以保证 viewDidAppear 已经完成，所以获取到的 keyWindow 必定不为 nil
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window addSubview:self];
+        
+        m_viewDidConfig = YES;
+    }
+    
+    UIImageView *srcImageView = _srcImageViews[index];
+    if (srcImageView) {
+        CGRect srcRect = [srcImageView.superview convertRect:srcImageView.frame toView:self.superview];
+        UIImageView *tmpImageView = [[UIImageView alloc] initWithFrame:srcRect];
+        tmpImageView.contentMode = UIViewContentModeScaleAspectFit;
+        tmpImageView.image = srcImageView.image;
+        [self.superview addSubview:tmpImageView];
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            tmpImageView.frame = self.bounds;
+        } completion:^(BOOL finished) {
+            [tmpImageView removeFromSuperview];
+            self.hidden = NO;
+        }];
+    }
+}
+
+#pragma mark - Private Methods
+
+- (BOOL)configSourceImageZoomViewsWithCurrentIndex:(NSInteger)index {
+    if ([self validatePageIndex:index] == NO) {
+        return NO;
     }
     m_currentIndex = index;
     
+    for (UIView *zoomView in _mainScrollView.subviews) {
+        [zoomView removeFromSuperview];
+    }
+    
     CGRect curRect = self.bounds;
-    CGFloat srcX = JTTImagesBrowser_ScreenWidth * index;
+    CGFloat srcX = JTTImagesBrowser_ScreenWidth * m_currentIndex;
     curRect.origin.x = srcX;
-    JTTImageZoomView *curZoomView = [[JTTImageZoomView alloc] initWithFrame:curRect];
+    JTTImageZoomView *curZoomView = [[JTTImageZoomView alloc] initWithFrame:curRect
+                                                                      image:_allImages[m_currentIndex]
+                                                                      index:m_currentIndex
+                                                                   delegate:self];
     curZoomView.tag = JTTImagesBrowser_ImageZoomViewTag(m_currentIndex);
-    curZoomView.jttDelegate = self;
-    [curZoomView setImage:_allImages[m_currentIndex]];
     [_mainScrollView addSubview:curZoomView];
     
     if ([self validatePageIndex:m_currentIndex - 1]) {
         CGRect preRect = self.bounds;
         preRect.origin.x = srcX - JTTImagesBrowser_ScreenWidth;
-        JTTImageZoomView *preZoomView = [[JTTImageZoomView alloc] initWithFrame:preRect];
+        JTTImageZoomView *preZoomView = [[JTTImageZoomView alloc] initWithFrame:preRect
+                                                                          image:_allImages[m_currentIndex - 1]
+                                                                          index:(m_currentIndex - 1)
+                                                                       delegate:self];
         preZoomView.tag = JTTImagesBrowser_ImageZoomViewTag(m_currentIndex - 1);
-        preZoomView.jttDelegate = self;
-        [preZoomView setImage:_allImages[m_currentIndex - 1]];
         [_mainScrollView addSubview:preZoomView];
     }
     
     if ([self validatePageIndex:m_currentIndex + 1]) {
         CGRect nexRect = self.bounds;
         nexRect.origin.x = srcX + JTTImagesBrowser_ScreenWidth;
-        JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect];
+        JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect
+                                                                          image:_allImages[m_currentIndex + 1]
+                                                                          index:(m_currentIndex + 1)
+                                                                       delegate:self];
         nexZoomView.tag = JTTImagesBrowser_ImageZoomViewTag(m_currentIndex + 1);
-        nexZoomView.jttDelegate = self;
-        [nexZoomView setImage:_allImages[m_currentIndex + 1]];
         [_mainScrollView addSubview:nexZoomView];
     }
     [_mainScrollView scrollRectToVisible:curZoomView.frame animated:NO];
     
-    m_srcImageViewRect = imageView.frame;
-    UIImageView *tmpImageView = [[UIImageView alloc] initWithFrame:m_srcImageViewRect];
-    tmpImageView.contentMode = UIViewContentModeScaleAspectFit;
-    tmpImageView.image = imageView.image;
-    [self.superview addSubview:tmpImageView];
-    [UIView animateWithDuration:0.3 animations:^{
-        tmpImageView.frame = self.bounds;
-    } completion:^(BOOL finished) {
-        [tmpImageView removeFromSuperview];
-        self.hidden = NO; 
-    }];
+    return YES;
 }
-
-#pragma mark - Private Methods
 
 - (void)refreshMainScrollView {
     JTTImageZoomView *curZoomView = (JTTImageZoomView *)[_mainScrollView viewWithTag:JTTImagesBrowser_ImageZoomViewTag(m_currentIndex)];
@@ -157,10 +196,11 @@
             if (tmpZoomView == nil) {
                 CGRect nexRect = curRect;
                 nexRect.origin.x += JTTImagesBrowser_ScreenWidth;
-                JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect];
+                JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect
+                                                                                  image:_allImages[m_currentIndex + 1]
+                                                                                  index:(m_currentIndex + 1)
+                                                                               delegate:self];
                 nexZoomView.tag = JTTImagesBrowser_ImageZoomViewTag(m_currentIndex + 1);
-                nexZoomView.jttDelegate = self;
-                nexZoomView.image = _allImages[m_currentIndex + 1];
                 [_mainScrollView addSubview:nexZoomView];
             }
         }
@@ -177,10 +217,11 @@
             if (tmpZoomView == nil) {
                 CGRect nexRect = curRect;
                 nexRect.origin.x -= JTTImagesBrowser_ScreenWidth;
-                JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect];
+                JTTImageZoomView *nexZoomView = [[JTTImageZoomView alloc] initWithFrame:nexRect
+                                                                                  image:_allImages[m_currentIndex - 1]
+                                                                                  index:(m_currentIndex - 1)
+                                                                               delegate:self];
                 nexZoomView.tag = JTTImagesBrowser_ImageZoomViewTag(m_currentIndex - 1);
-                nexZoomView.jttDelegate = self;
-                nexZoomView.image = _allImages[m_currentIndex - 1];
                 [_mainScrollView addSubview:nexZoomView];
             }
         }
@@ -211,20 +252,28 @@
     [self refreshMainScrollView];
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    m_currentIndex = (NSInteger)(scrollView.contentOffset.x / JTTImagesBrowser_ScreenWidth);
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
 #pragma mark - JTTImageZoomViewDelegate
 
-- (void)jtt_imageZoomViewDidTap {
+- (void)jtt_imageZoomViewDidTapAtIndex:(NSInteger)index {
     UIImageView *tmpImageView = [[UIImageView alloc] initWithFrame:self.bounds];
     tmpImageView.contentMode = UIViewContentModeScaleAspectFit;
     tmpImageView.image = _allImages[m_currentIndex];
     [self.superview addSubview:tmpImageView];
+    
     self.hidden = YES;
+    UIImageView *srcImageView = _srcImageViews[index];
+    CGRect srcRect = [srcImageView.superview convertRect:srcImageView.frame toView:self.superview];
+    
     [UIView animateWithDuration:0.3 animations:^{
-        tmpImageView.frame = m_srcImageViewRect;
+        tmpImageView.frame = srcRect;
     } completion:^(BOOL finished) {
         [tmpImageView removeFromSuperview];
     }];

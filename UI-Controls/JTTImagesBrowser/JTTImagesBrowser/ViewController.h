@@ -1,15 +1,15 @@
+////
+////  ViewController.h
+////  JTTImagesBrowser
+////
+////  Created by Jymn_Chen on 15/7/26.
+////  Copyright (c) 2015年 com.jymnchen. All rights reserved.
+////
 //
-//  ViewController.h
-//  JTTImagesBrowser
+//#import <UIKit/UIKit.h>
 //
-//  Created by Jymn_Chen on 15/7/26.
-//  Copyright (c) 2015年 com.jymnchen. All rights reserved.
+//@interface ViewController : UIViewController
 //
-
-#import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
-
-@end
-
+//
+//@end
+//

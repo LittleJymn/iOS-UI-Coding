@@ -16,6 +16,7 @@
 		18B1F73C1B6400D80001A389 /* JTTImagesBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B1F73B1B6400D80001A389 /* JTTImagesBrowserTests.m */; };
 		18B1F7481B64018A0001A389 /* JTTImagesBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B1F7471B64018A0001A389 /* JTTImagesBrowser.m */; };
 		18B1F74B1B6407230001A389 /* JTTImageZoomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B1F74A1B6407230001A389 /* JTTImageZoomView.m */; };
+		18B35D8F1B65DAF4008067F0 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B35D8E1B65DAF4008067F0 /* TableViewController.m */; };
 		18CEB6501B64D2A400F8D631 /* img1.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CEB64D1B64D2A400F8D631 /* img1.png */; };
 		18CEB6561B64E05200F8D631 /* img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CEB6531B64E05200F8D631 /* img2.png */; };
 		18CEB6571B64E05200F8D631 /* img3.png in Resources */ = {isa = PBXBuildFile; fileRef = 18CEB6541B64E05200F8D631 /* img3.png */; };
@@ -53,6 +54,8 @@
 		18B1F7471B64018A0001A389 /* JTTImagesBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTImagesBrowser.m; sourceTree = "<group>"; };
 		18B1F7491B6407230001A389 /* JTTImageZoomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTImageZoomView.h; sourceTree = "<group>"; };
 		18B1F74A1B6407230001A389 /* JTTImageZoomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTImageZoomView.m; sourceTree = "<group>"; };
+		18B35D8D1B65DAF4008067F0 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		18B35D8E1B65DAF4008067F0 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		18CEB64D1B64D2A400F8D631 /* img1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img1.png; sourceTree = "<group>"; };
 		18CEB6531B64E05200F8D631 /* img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img2.png; sourceTree = "<group>"; };
 		18CEB6541B64E05200F8D631 /* img3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img3.png; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				18B1F7241B6400D80001A389 /* AppDelegate.m */,
 				18B1F7261B6400D80001A389 /* ViewController.h */,
 				18B1F7271B6400D80001A389 /* ViewController.m */,
+				18B35D8D1B65DAF4008067F0 /* TableViewController.h */,
+				18B35D8E1B65DAF4008067F0 /* TableViewController.m */,
 				18B1F7291B6400D80001A389 /* Main.storyboard */,
 				18B1F72C1B6400D80001A389 /* Images.xcassets */,
 				18B1F72E1B6400D80001A389 /* LaunchScreen.xib */,
@@ -277,6 +282,7 @@
 				18B1F7481B64018A0001A389 /* JTTImagesBrowser.m in Sources */,
 				18B1F74B1B6407230001A389 /* JTTImageZoomView.m in Sources */,
 				18B1F7251B6400D80001A389 /* AppDelegate.m in Sources */,
+				18B35D8F1B65DAF4008067F0 /* TableViewController.m in Sources */,
 				18B1F7221B6400D80001A389 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
