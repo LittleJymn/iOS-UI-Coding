@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="o8o-8P-teY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Eue-KZ-apU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -165,7 +165,6 @@
         <!--Table View Controller-->
         <scene sceneID="9iB-og-hr0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DoW-EW-2yG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="Je0-Qg-nAu" customClass="TableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="GKa-vP-vEK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -178,6 +177,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="3p6-tX-HA4"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DoW-EW-2yG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1720" y="850"/>
         </scene>

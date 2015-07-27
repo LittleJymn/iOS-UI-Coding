@@ -24,6 +24,7 @@
     NSInteger m_currentIndex;
     CGPoint m_beginPoint;
     BOOL m_scrollToRight;
+    BOOL m_isShowAnimating; // 防止用户不断点击原图时本视图重复弹出
 }
 
 @property (nonatomic, copy) NSArray *srcImageViews;
@@ -102,7 +103,14 @@
 #pragma mark - Public Methods
 
 - (void)showWithIndex:(NSInteger)index {
+    if (m_isShowAnimating) {
+        return;
+    }
+    m_isShowAnimating = YES;
+    
     if ([self configSourceImageZoomViewsWithCurrentIndex:index] == NO) {
+        m_isShowAnimating = NO;
+        
         return;
     }
     
@@ -128,6 +136,7 @@
         } completion:^(BOOL finished) {
             [tmpImageView removeFromSuperview];
             self.hidden = NO;
+            m_isShowAnimating = NO;
         }];
     }
 }
