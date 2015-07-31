@@ -9,4 +9,5 @@
 ## UI Controls
 
 * JTTAvatarBrowser: 点击图片全屏查看大图的控件
+* JTTImagesBrowser: 查看用户相册的控件
 
