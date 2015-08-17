@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		18CF897D1B8189760085930F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF897C1B8189760085930F /* main.m */; };
+		18CF89801B8189760085930F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF897F1B8189760085930F /* AppDelegate.m */; };
+		18CF89831B8189760085930F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF89821B8189760085930F /* ViewController.m */; };
+		18CF89861B8189760085930F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18CF89841B8189760085930F /* Main.storyboard */; };
+		18CF89881B8189770085930F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18CF89871B8189770085930F /* Images.xcassets */; };
+		18CF898B1B8189770085930F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18CF89891B8189770085930F /* LaunchScreen.xib */; };
+		18CF89971B8189770085930F /* SuspendMenuButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF89961B8189770085930F /* SuspendMenuButtonTests.m */; };
+		18CF89A31B818A780085930F /* JTTSuspendMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CF89A21B818A780085930F /* JTTSuspendMenuButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		18CF89911B8189770085930F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 18CF896F1B8189760085930F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18CF89761B8189760085930F;
+			remoteInfo = SuspendMenuButton;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		18CF89771B8189760085930F /* SuspendMenuButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuspendMenuButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CF897B1B8189760085930F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CF897C1B8189760085930F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		18CF897E1B8189760085930F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		18CF897F1B8189760085930F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		18CF89811B8189760085930F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		18CF89821B8189760085930F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18CF89851B8189760085930F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		18CF89871B8189770085930F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		18CF898A1B8189770085930F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		18CF89901B8189770085930F /* SuspendMenuButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuspendMenuButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		18CF89951B8189770085930F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18CF89961B8189770085930F /* SuspendMenuButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuspendMenuButtonTests.m; sourceTree = "<group>"; };
+		18CF89A11B818A780085930F /* JTTSuspendMenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTTSuspendMenuButton.h; sourceTree = "<group>"; };
+		18CF89A21B818A780085930F /* JTTSuspendMenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTTSuspendMenuButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		18CF89741B8189760085930F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18CF898D1B8189770085930F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18CF896E1B8189760085930F = {
+			isa = PBXGroup;
+			children = (
+				18CF89791B8189760085930F /* SuspendMenuButton */,
+				18CF89931B8189770085930F /* SuspendMenuButtonTests */,
+				18CF89781B8189760085930F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		18CF89781B8189760085930F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				18CF89771B8189760085930F /* SuspendMenuButton.app */,
+				18CF89901B8189770085930F /* SuspendMenuButtonTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		18CF89791B8189760085930F /* SuspendMenuButton */ = {
+			isa = PBXGroup;
+			children = (
+				18CF89A11B818A780085930F /* JTTSuspendMenuButton.h */,
+				18CF89A21B818A780085930F /* JTTSuspendMenuButton.m */,
+				18CF897E1B8189760085930F /* AppDelegate.h */,
+				18CF897F1B8189760085930F /* AppDelegate.m */,
+				18CF89811B8189760085930F /* ViewController.h */,
+				18CF89821B8189760085930F /* ViewController.m */,
+				18CF89841B8189760085930F /* Main.storyboard */,
+				18CF89871B8189770085930F /* Images.xcassets */,
+				18CF89891B8189770085930F /* LaunchScreen.xib */,
+				18CF897A1B8189760085930F /* Supporting Files */,
+			);
+			path = SuspendMenuButton;
+			sourceTree = "<group>";
+		};
+		18CF897A1B8189760085930F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18CF897B1B8189760085930F /* Info.plist */,
+				18CF897C1B8189760085930F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18CF89931B8189770085930F /* SuspendMenuButtonTests */ = {
+			isa = PBXGroup;
+			children = (
+				18CF89961B8189770085930F /* SuspendMenuButtonTests.m */,
+				18CF89941B8189770085930F /* Supporting Files */,
+			);
+			path = SuspendMenuButtonTests;
+			sourceTree = "<group>";
+		};
+		18CF89941B8189770085930F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				18CF89951B8189770085930F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		18CF89761B8189760085930F /* SuspendMenuButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18CF899A1B8189770085930F /* Build configuration list for PBXNativeTarget "SuspendMenuButton" */;
+			buildPhases = (
+				18CF89731B8189760085930F /* Sources */,
+				18CF89741B8189760085930F /* Frameworks */,
+				18CF89751B8189760085930F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SuspendMenuButton;
+			productName = SuspendMenuButton;
+			productReference = 18CF89771B8189760085930F /* SuspendMenuButton.app */;
+			productType = "com.apple.product-type.application";
+		};
+		18CF898F1B8189770085930F /* SuspendMenuButtonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 18CF899D1B8189770085930F /* Build configuration list for PBXNativeTarget "SuspendMenuButtonTests" */;
+			buildPhases = (
+				18CF898C1B8189770085930F /* Sources */,
+				18CF898D1B8189770085930F /* Frameworks */,
+				18CF898E1B8189770085930F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				18CF89921B8189770085930F /* PBXTargetDependency */,
+			);
+			name = SuspendMenuButtonTests;
+			productName = SuspendMenuButtonTests;
+			productReference = 18CF89901B8189770085930F /* SuspendMenuButtonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18CF896F1B8189760085930F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = com.jymnchen;
+				TargetAttributes = {
+					18CF89761B8189760085930F = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					18CF898F1B8189770085930F = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 18CF89761B8189760085930F;
+					};
+				};
+			};
+			buildConfigurationList = 18CF89721B8189760085930F /* Build configuration list for PBXProject "SuspendMenuButton" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 18CF896E1B8189760085930F;
+			productRefGroup = 18CF89781B8189760085930F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				18CF89761B8189760085930F /* SuspendMenuButton */,
+				18CF898F1B8189770085930F /* SuspendMenuButtonTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		18CF89751B8189760085930F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18CF89861B8189760085930F /* Main.storyboard in Resources */,
+				18CF898B1B8189770085930F /* LaunchScreen.xib in Resources */,
+				18CF89881B8189770085930F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18CF898E1B8189770085930F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18CF89731B8189760085930F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18CF89831B8189760085930F /* ViewController.m in Sources */,
+				18CF89801B8189760085930F /* AppDelegate.m in Sources */,
+				18CF89A31B818A780085930F /* JTTSuspendMenuButton.m in Sources */,
+				18CF897D1B8189760085930F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		18CF898C1B8189770085930F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18CF89971B8189770085930F /* SuspendMenuButtonTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		18CF89921B8189770085930F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18CF89761B8189760085930F /* SuspendMenuButton */;
+			targetProxy = 18CF89911B8189770085930F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		18CF89841B8189760085930F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18CF89851B8189760085930F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		18CF89891B8189770085930F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				18CF898A1B8189770085930F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		18CF89981B8189770085930F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		18CF89991B8189770085930F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		18CF899B1B8189770085930F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: // / (ZTZG7GRXTH)";
+				INFOPLIST_FILE = SuspendMenuButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "91b97c73-cc69-4d72-bfb8-4e2a041b4137";
+			};
+			name = Debug;
+		};
+		18CF899C1B8189770085930F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: // / (ZTZG7GRXTH)";
+				INFOPLIST_FILE = SuspendMenuButton/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "91b97c73-cc69-4d72-bfb8-4e2a041b4137";
+			};
+			name = Release;
+		};
+		18CF899E1B8189770085930F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SuspendMenuButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "91b97c73-cc69-4d72-bfb8-4e2a041b4137";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuspendMenuButton.app/SuspendMenuButton";
+			};
+			name = Debug;
+		};
+		18CF899F1B8189770085930F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SuspendMenuButtonTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "91b97c73-cc69-4d72-bfb8-4e2a041b4137";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuspendMenuButton.app/SuspendMenuButton";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		18CF89721B8189760085930F /* Build configuration list for PBXProject "SuspendMenuButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18CF89981B8189770085930F /* Debug */,
+				18CF89991B8189770085930F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18CF899A1B8189770085930F /* Build configuration list for PBXNativeTarget "SuspendMenuButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18CF899B1B8189770085930F /* Debug */,
+				18CF899C1B8189770085930F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		18CF899D1B8189770085930F /* Build configuration list for PBXNativeTarget "SuspendMenuButtonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				18CF899E1B8189770085930F /* Debug */,
+				18CF899F1B8189770085930F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 18CF896F1B8189760085930F /* Project object */;
+}
